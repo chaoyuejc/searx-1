@@ -2,6 +2,9 @@ FROM alpine:3.15
 ENTRYPOINT ["/sbin/tini","--","/usr/local/searx/dockerfiles/docker-entrypoint.sh"]
 EXPOSE 8080
 
+WORKDIR /etc/searx
+WORKDIR /var/log/uwsgi
+
 
 ARG SEARX_GID=977
 ARG SEARX_UID=977
